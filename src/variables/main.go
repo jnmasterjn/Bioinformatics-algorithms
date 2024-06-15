@@ -11,8 +11,10 @@ const my_var string = "this is a string" //can't be changed
 func main() {
 	fmt.Println("variable testing")
 	numberr := 10 //short declaration
+	janice := 17
 	fmt.Println(numberr)
 	fmt.Println(my_var)
+	fmt.Println(janice)
 
 	hi()
 }
