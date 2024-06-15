@@ -10,8 +10,8 @@ const my_var string = "this is a string" //can't be changed
 
 func main() {
 	fmt.Println("variable testing")
-	number := 10
-	fmt.Println(number)
+	numberr := 10 //short declaration
+	fmt.Println(numberr)
 	fmt.Println(my_var)
 
 	hi()
