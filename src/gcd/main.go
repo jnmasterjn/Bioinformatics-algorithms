@@ -26,5 +26,6 @@ func Min2(a, b int) int {
 func TrivialGCD(a, b int) int {
 	d := 1
 	m := Min2(a, b)
+	for i 
 
 }
