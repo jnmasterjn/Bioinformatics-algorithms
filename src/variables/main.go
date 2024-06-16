@@ -21,6 +21,7 @@ func main() {
 
 func hi() {
 	fmt.Printf("eijdiwerjfw %v firwejforghjurtrwge %v", number, my_var)
+	fmt.Print("hi")
 }
 
 // basic type
