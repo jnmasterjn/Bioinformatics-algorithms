@@ -61,3 +61,33 @@ func Factorial(n int) int {
 }
 
 //Min Integer Array Function
+
+func MinIntegerArray(list []int) int {
+	if len(list) == 0 {
+		panic("empty slice given")
+	}
+
+	min := list[0]
+
+	for i := 0; i <= len(list)-1; i++ {
+		if list[i] < min {
+			min = list[i]
+		}
+	}
+	return min
+}
+
+func MinIntegers(numbers ...int) int {
+	if len(numbers) == 0 {
+		panic("No numbers provided")
+	}
+
+	var minimun int
+
+	for i, current := range numbers {
+		if i == 0 || current < minimun {
+			minimun = current
+		}
+	}
+	return minimun
+}
