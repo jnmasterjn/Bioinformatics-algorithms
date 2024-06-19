@@ -6,6 +6,7 @@ import (
 
 func main() {
 	fmt.Println("Power")
+
 }
 
 // 'b' is the times that 'a' gonna multiply itself
