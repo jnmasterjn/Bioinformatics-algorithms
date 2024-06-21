@@ -76,3 +76,11 @@ func ListPrimes(n int) []int {
 
 	return primeList
 }
+
+func NextTwinPrimes(n int) (int, int) {
+	for i := n + 1; ; i++ {
+		if IsPrime(i) && IsPrime(i+2) {
+			return i, i + 2
+		}
+	}
+}

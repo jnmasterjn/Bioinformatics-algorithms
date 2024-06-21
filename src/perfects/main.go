@@ -28,3 +28,12 @@ func IsPerfect(n int) bool {
 	}
 	return false
 }
+
+func NextPerfectNumber(n int) int {
+	for {
+		n += 1 // Start checking from the next number
+		if IsPerfect(n) {
+			return n // Return the number if it is perfect
+		}
+	}
+}
