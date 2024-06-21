@@ -37,6 +37,17 @@ func PatternCount(pattern, text string) int {
 	return count
 }
 
-func StartIndices() {
+// takes input, two string, pattern and texts
+func StartIndices(pattern, text string) []int {
+	pos := make([]int, 0)
 
+	k := len(pattern)
+	n := len(text)
+
+	for i := 0; i < n-k+1; i++ {
+		if pattern == text[i:i+k] {
+			pos = append(pos, i)
+		}
+	}
+	return pos
 }
