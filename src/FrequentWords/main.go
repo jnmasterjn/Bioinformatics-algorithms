@@ -8,7 +8,7 @@ func main() {
 	fmt.Println("frequent words")
 }
 
-func FindFrequentWords(text string, k int) []int {
+func FindFrequentWords(text string, k int) []string {
 	freqPattern := make([]string, 0)
 
 	freqMap := FrequencyTable(text, k) // key and value like dictionary in python
@@ -23,7 +23,7 @@ func FindFrequentWords(text string, k int) []int {
 		}
 
 	}
-	return freqPattern()
+	return freqPattern
 
 }
 
@@ -36,8 +36,10 @@ func FrequencyTable(text string, k int) map[string]int { //key->map; value->int
 		pattern := text[i : i+k] //grab current value
 
 		//update the value of freqmap w this pattern w len(k)
-
+		freqMap[pattern]++
+		//shortcut, if pattern is a key, this is what we want, if not, we created it and increament
 	}
+	return freqMap
 }
 
 // find max value in the map
