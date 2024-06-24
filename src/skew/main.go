@@ -59,3 +59,7 @@ func Skew(symbol byte) int {
 	}
 	return 0
 }
+
+func MinimunSkew(genome string) []int {
+
+}
