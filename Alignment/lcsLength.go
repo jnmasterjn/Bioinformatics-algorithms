@@ -70,15 +70,24 @@ Sample Output 9:
 
 package main
 
+import "fmt"
+
 //LCSLength takes two strings as input. It returns the length of a longest common
 //subsequence of the two strings.
 
+func main() {
+	fmt.Println(LCSLength("ATCGTAGTC", "ATGAATCGG"))
+}
+
 func LCSLength(str1, str2 string) int {
+	if len(str1) == 0 || len(str2) == 0 {
+		panic("empty strings given")
+	}
 	fill := Matrix(len(str1)+1, len(str2)+1)
 	for row := 1; row <= len(str1); row++ {
 		for col := 1; col <= len(str2); col++ {
 			if str1[row-1] == str2[col-1] { //whether top left is the same for both string
-				fill[row][col] = 1 + fill[row-1][col-1] //matched, so plus 1
+				fill[row][col] = 1 + fill[row-1][col-1] //matched, so plus 1 to diagonal, [row-1][col-1] is diagonal
 			} else {
 				fill[row][col] = max2(fill[row-1][col], fill[row][col-1]) //if not matched, find the bigger sum
 			}
@@ -98,7 +107,7 @@ func Matrix(len1, len2 int) [][]int {
 	arr := make([][]int, len1)
 
 	for i := 0; i < len1; i++ {
-		arr[i] = make([]int, len2)
+		arr[i] = make([]int, len2) //make column
 	}
 	return arr
 }
