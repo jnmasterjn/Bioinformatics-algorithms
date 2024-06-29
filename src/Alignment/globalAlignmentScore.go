@@ -8,14 +8,14 @@ func GlobalScoreTable(str1, str2 string, match, mismatch, gap float64) [][]float
 
 	for row := 1; row < len(str1)+1; row++ {
 		fill[row][0] = float64(row) * gap * (-1)
-	}
+	} //vertical, fill in edge
 
 	for col := 1; col < len(str2)+1; col++ {
 		fill[0][col] = float64(col) * gap * (-1)
-	}
+	} //horizontal, fill the edge
 
 	//Calculating the values inside the matrixs
-	for row := 1; row <= len(str1); row++ {
+	for row := 1; row <= len(str1); row++ { //start from 1 because 0 is already filled
 		for col := 1; col <= len(str2); col++ {
 
 			//Calculate values for the three directions
@@ -23,7 +23,7 @@ func GlobalScoreTable(str1, str2 string, match, mismatch, gap float64) [][]float
 			left := fill[row][col-1] - gap
 			diag := fill[row-1][col-1]
 
-			//Two cases: match or mismatch
+			//Two cases: match or mismatch for diag
 			if str1[row-1] == str2[col-1] { //match
 				diag += match
 			} else {

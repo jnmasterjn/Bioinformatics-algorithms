@@ -102,12 +102,3 @@ func max2(a, b int) int {
 	}
 	return b
 }
-
-func Matrix(len1, len2 int) [][]int {
-	arr := make([][]int, len1)
-
-	for i := 0; i < len1; i++ {
-		arr[i] = make([]int, len2) //make column
-	}
-	return arr
-}

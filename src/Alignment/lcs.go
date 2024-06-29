@@ -37,18 +37,6 @@ func LongestCommonSubsequence(str1, str2 string) string {
 
 }
 
-func Max(x ...int) int {
-
-	var max int
-	for i, val := range x {
-		if val > max {
-			max = val
-		}
-		i = i
-	}
-	return max
-}
-
 func LCMatrix(str1, str2 string) [][]int {
 	if len(str1) == 0 || len(str2) == 0 {
 		panic("empty strings given")

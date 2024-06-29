@@ -70,22 +70,3 @@ func GlobalAlignment(str1, str2 string, match, mismatch, gap float64) Alignment 
 
 	return a
 }
-
-func Max(x ...float64) float64 {
-	var max float64
-	for i, val := range x {
-		if i == 0 || val > max {
-			max = val
-		}
-	}
-	return max
-}
-
-func Matrix(len1, len2 int) [][]float64 {
-	arr := make([][]float64, len1)
-
-	for i := 0; i < len1; i++ {
-		arr[i] = make([]float64, len2)
-	}
-	return arr
-}
