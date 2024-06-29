@@ -1,72 +1,58 @@
 package main
 
-type Alignment [2]string
-
 // GlobalAlignment takes two strings, along with match, mismatch, and gap scores.
 // It returns a maximum score global alignment of the strings corresponding to these penalties.
+
+// Sample Input 1:
+
+// 1 1 2
+// GAGA
+// GAT
+// Sample Output 1:
+
+// A sample correct alignment for this problem is:
+// GAGA
+// GAT-
+// Your alignment should have the same score as the sample alignment: -1
+// Sample Input 2:
+
+// 1 3 1
+// ACG
+// ACT
+// Sample Output 2:
+
+// A sample correct alignment for this problem is:
+// AC-G
+// ACT-
+// Your alignment should have the same score as the sample alignment: 0
+
+type Alignment [2]string
+
 func GlobalAlignment(str1, str2 string, match, mismatch, gap float64) Alignment {
-	var a Alignment
+	var a Alignment //arrary containing two strings
 
-	//The final strings
-	ms1 := ""
-	ms2 := ""
-
-	//Make the score table
-	lcM := GlobalScoreTable(str1, str2, match, mismatch, gap)
+	table := GlobalScoreTable(str1, str2, match, mismatch, gap) //make the score table (matrix)
 
 	//row and column
-	r := len(lcM) - 1
-	c := len(lcM[0]) - 1
+	roww := len(str1)
+	coll := len(str2)
 
-	//we want to end the loop when we reach the matrix[0][0] (well)
-	//starts from the end (sink)
-	for r > 0 && c > 0 {
-		num := lcM[r][c]
-
-		//This part needs to be modified
-		// if going diagonal increases the score, matched
-		if lcM[r-1][c-1]+match == num && str1[r-1] == str2[c-1] {
-			//Add the letters
-			ms1 = string(str1[r-1]) + ms1
-			ms2 = string(str2[c-1]) + ms2
-			r--
-			c--
-			//add letter to both ms1 and ms2 if match
-		} else if lcM[r-1][c]-gap == num {
-			ms1 = string(str1[r-1]) + ms1
-			ms2 = "-" + ms2
-			r--
-			//add dash to ms1, add letter to ms2
-		} else if lcM[r][c-1]-gap == num {
-			ms2 = string(str2[c-1]) + ms2
-			ms1 = "-" + ms1
-			c--
-		} else { //mismatch
-			//add the different letters to corresponding message
-			ms1 = string(str1[r-1]) + ms1
-			ms2 = string(str2[c-1]) + ms2
-			r--
-			c--
+	//backtracking
+	//loop when haven't reach top left
+	for roww != 0 && coll != 0 {
+		//case 1, both letter from the 2 strings match (diag)
+		if str1[roww-1] == str2[coll-1] {
 
 		}
 
+		//case 2, mismatch, have two different letters
+		else if [roww-1] != str2[coll-1] {
+
+		}
+
+
+
+
 	}
 
-	//Compensating for the dashes at the beginning 😭 😭😭😭😭😭
-	for r > 0 {
-		ms1 = "-" + ms1
-		ms2 = string(str2[r]) + ms2
-		r--
-	}
-	for c > 0 {
-		ms2 = "-" + ms2
-		ms1 = string(str1[c]) + ms1
-		c--
-	}
-
-	//Setting the alignment variable
-	a[0] = ms1
-	a[1] = ms2
-
-	return a
 }
