@@ -1,12 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println("Sequence alignment!")
-}
+// func main() {
+// 	fmt.Println("Sequence alignment!")
+// }
 
 func Hemoglobin() {
 	ZebraFish := ReadFASTAFile("Data/Hemoglobin/Danrio_rerio_hemoglobin.fasta")

@@ -70,14 +70,12 @@ Sample Output 9:
 
 package main
 
-import "fmt"
-
 //LCSLength takes two strings as input. It returns the length of a longest common
 //subsequence of the two strings.
 
-func main() {
-	fmt.Println(LCSLength("ATCGTAGTC", "ATGAATCGG"))
-}
+// func main() {
+// 	fmt.Println(LCSLength("ATCGTAGTC", "ATGAATCGG"))
+// }
 
 func LCSLength(str1, str2 string) int {
 	if len(str1) == 0 || len(str2) == 0 {
