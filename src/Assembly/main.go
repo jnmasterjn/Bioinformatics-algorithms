@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Genome assembly!")
+	fmt.Println(GenerateRandomGenome(10))
 }

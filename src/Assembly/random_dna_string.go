@@ -9,7 +9,7 @@ import (
 func GenerateRandomGenome(length int) string {
 	genome := ""
 
-	for i := 0; i < length+1; i++ {
+	for i := 0; i < length; i++ {
 		random := rand.Intn(4)
 
 		if random == 0 {
