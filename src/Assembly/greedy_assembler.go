@@ -7,5 +7,9 @@ package main
 //3. Every read has equal length (k)
 //4. DNA is single-stranded
 func GreedyAssembler(reads []string) string {
-	return ""
+	if len(reads) == 0{
+		panic("...")
+	}
+
+	
 }
