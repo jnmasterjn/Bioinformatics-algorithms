@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println(GenerateRandomGenome(10))
+	fmt.Println(ScoreOverlapAlignment("CCAt", "AT", 1, 1, 1))
 }
