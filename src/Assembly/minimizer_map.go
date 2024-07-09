@@ -8,5 +8,18 @@ type StringIndex map[string][]int
 //It returns a map of k-mers to the indices of the reads in the list having this k-mer minimizer.
 func MapToMinimizer(reads []string, k int, windowLength int) StringIndex {
 	dict := make(StringIndex)
+
+	for i, read := range reads{
+		n:= len(read)
+
+		for j:=0; j< n-k+1; j++{
+			currentWindow:= read[j:j+currentWindow]
+			
+		}
+	}
+
+
+
+
 	return dict 
 }
